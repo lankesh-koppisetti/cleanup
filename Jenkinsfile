@@ -4,12 +4,12 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-        AWS_DEFAULT_REGION    = 'us-east-1'
+        AWS_DEFAULT_REGION    = credentials('AWS_REGION')
     }
 
     triggers {
         // Run every day at 11:30 PM
-        cron('30 23 * * *')
+        cron('50 23 * * *')
     }
 
     stages {
